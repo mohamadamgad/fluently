@@ -25,6 +25,7 @@ const answerParagraph = {
 function Test() {
     return (
         <div style={container}>
+            <h2>Question 1/20</h2>
             <h3>There isn't ....... sugar in this coffee!</h3>
             <div style={answerContainer}>
                 <span style={answerText}>
