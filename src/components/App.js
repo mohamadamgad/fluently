@@ -1,12 +1,17 @@
 import React from "react";
 import "./App.css";
+import { Route, Switch } from "react-router-dom";
+import Test from "./Test";
+import HomePage from "./HomePage";
 
 function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <h2>Welcome to Fluently</h2>
-                <p>Choose your language</p>
+                <Switch>
+                    <Route path="/" exact component={HomePage} />
+                    <Route path="/test" component={Test} />
+                </Switch>
             </header>
         </div>
     );
