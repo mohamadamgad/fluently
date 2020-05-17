@@ -5,15 +5,21 @@ const container = {
 };
 
 const answerContainer = {
-    display: "grid",
-    gridTemplateAreas: '"span span" "span span"'
+    display: "inline-grid",
+    gridTemplateAreas: '"span span" "span span"',
+    gridGap: "20px 12px",
+    width: "100%"
 };
 const answerText = {
     border: "1px solid",
-    borderRadius: "15px"
+    borderRadius: "25px",
+    justifyItems: "center",
+    alignItems: "center",
+    cursor: "pointer"
 };
 const answerParagraph = {
-    margin: 0
+    margin: 0,
+    padding: "10px"
 };
 
 function Test() {
