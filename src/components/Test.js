@@ -22,24 +22,36 @@ const answerParagraph = {
     padding: "10px"
 };
 
+function selectAnswer(e) {
+    e.preventDefault();
+    console.log("select answer", e.target);
+}
+
+const data = {
+    question: "There isn't ....... sugar in this coffee!",
+    answers: [
+        { id: 1, text: "over" },
+        { id: 2, text: "no" },
+        { id: 3, text: "any" },
+        { id: 4, text: "some" }
+    ]
+};
+
 function Test() {
     return (
         <div style={container}>
             <h2>Question 1/20</h2>
-            <h3>There isn't ....... sugar in this coffee!</h3>
+            <h3>{data.question}</h3>
             <div style={answerContainer}>
-                <span style={answerText}>
-                    <p style={answerParagraph}>over</p>
-                </span>
-                <span style={answerText}>
-                    <p style={answerParagraph}>no</p>
-                </span>
-                <span style={answerText}>
-                    <p style={answerParagraph}>any</p>
-                </span>
-                <span style={answerText}>
-                    <p style={answerParagraph}>some</p>
-                </span>
+                {data.answers.map(answer => {
+                    return (
+                        <span key={answer.id} style={answerText}>
+                            <p onClick={selectAnswer} style={answerParagraph}>
+                                {answer.text}
+                            </p>
+                        </span>
+                    );
+                })}
             </div>
         </div>
     );
