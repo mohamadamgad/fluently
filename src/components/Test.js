@@ -22,18 +22,17 @@ const answerParagraph = {
     padding: "10px"
 };
 
-function selectAnswer(e) {
-    e.preventDefault();
-    console.log("select answer", e.target);
+function selectAnswer(answer) {
+    console.log("select answer", answer);
 }
 
 const data = {
     question: "There isn't ....... sugar in this coffee!",
     answers: [
-        { id: 1, text: "over" },
-        { id: 2, text: "no" },
-        { id: 3, text: "any" },
-        { id: 4, text: "some" }
+        { id: 1, text: "over", check: 0 },
+        { id: 2, text: "no", check: 0 },
+        { id: 3, text: "any", check: 1 },
+        { id: 4, text: "some", check: 0 }
     ]
 };
 
@@ -45,10 +44,12 @@ function Test() {
             <div style={answerContainer}>
                 {data.answers.map(answer => {
                     return (
-                        <span key={answer.id} style={answerText}>
-                            <p onClick={selectAnswer} style={answerParagraph}>
-                                {answer.text}
-                            </p>
+                        <span
+                            key={answer.id}
+                            onClick={() => selectAnswer(answer.check)}
+                            style={answerText}
+                        >
+                            <p style={answerParagraph}>{answer.text}</p>
                         </span>
                     );
                 })}
