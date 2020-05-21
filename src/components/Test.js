@@ -22,7 +22,7 @@ const answerParagraph = {
     padding: "10px"
 };
 
-const data = {
+const dataObj = {
     question: "There isn't ....... sugar in this coffee!",
     answers: [
         { id: 0, text: "over", check: 0 },
@@ -33,18 +33,17 @@ const data = {
 };
 
 function Test() {
+    const [data, setData] = useState(dataObj);
     const [answerTextStyle, setanswerTextStyle] = useState(answerText);
     function selectAnswer(answer) {
         if (answer.check === 1) {
-            console.log("select answer before", answerTextStyle);
             setanswerTextStyle({
-                border: "1px solid green",
+                border: "1px solid #2cbe4e",
                 borderRadius: "25px",
                 justifyItems: "center",
                 alignItems: "center",
                 cursor: "pointer"
             });
-            console.log("select answer after", answerTextStyle);
         }
     }
     return (
@@ -52,7 +51,7 @@ function Test() {
             <h2>Question 1/20</h2>
             <h3>{data.question}</h3>
             <div style={answerContainer}>
-                {data.answers.map((answer, index) => {
+                {data.answers.map(answer => {
                     return (
                         <span
                             key={answer.id}
