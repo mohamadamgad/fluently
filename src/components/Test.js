@@ -60,8 +60,11 @@ function Test() {
             });
         }
         if (!data[questionNumber + 1]) return;
-        setQuestionNumber(questionNumber + 1);
-        setanswerTextStyle(answerText);
+
+        setTimeout(() => {
+            setQuestionNumber(questionNumber + 1);
+            setanswerTextStyle(answerText);
+        }, 1000);
     }
     return (
         <div style={container}>
