@@ -51,30 +51,19 @@ function Test() {
         getData();
     }, []);
 
-    function selectAnswer(answer) {
-        if (answer.check === 1) {
-            setanswerTextStyle({
-                border: "1px solid #2cbe4e",
-                borderRadius: "25px",
-                justifyItems: "center",
-                alignItems: "center",
-                cursor: "pointer"
-            });
-        }
-        if (!data[questionNumber + 1]) return;
-
-        setTimeout(() => {
-            setQuestionNumber(questionNumber + 1);
-            setanswerTextStyle(answerText);
-        }, 1000);
-    }
-
-    function updateActiveDiv(value) {
+    function selectAnswer(value) {
         console.log("value", value);
         if (value === myStyle.active) {
             value = null;
         }
         setmyStyle({ active: value });
+        if (!data[questionNumber + 1]) return;
+
+        setTimeout(() => {
+            setQuestionNumber(questionNumber + 1);
+            setanswerTextStyle(answerText);
+            setmyStyle({ active: null });
+        }, 1000);
     }
 
     return (
@@ -93,8 +82,7 @@ function Test() {
                         return (
                             <span
                                 key={answer.id}
-                                onClick={() => updateActiveDiv(index)}
-                                // onClick={() => selectAnswer(answer)}
+                                onClick={() => selectAnswer(index)}
                                 style={color}
                             >
                                 <p style={answerParagraph}>{answer.text}</p>
