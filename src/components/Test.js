@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { getTest } from "../api/dataApi";
 
 const container = {
     width: "50%"
@@ -46,9 +47,17 @@ const dataObj = [
 ];
 
 function Test() {
-    const [data, setData] = useState(dataObj);
+    const [data, setData] = useState([]);
     let [questionNumber, setQuestionNumber] = useState(0);
     const [answerTextStyle, setanswerTextStyle] = useState(answerText);
+    useEffect(() => {
+        async function getData() {
+            const res = await getTest();
+            setData(res);
+        }
+        getData();
+    }, []);
+
     function selectAnswer(answer) {
         if (answer.check === 1) {
             setanswerTextStyle({
@@ -69,23 +78,24 @@ function Test() {
     return (
         <div style={container}>
             <h2>Question {questionNumber + 1}/20</h2>
-            <h3>{data[questionNumber].question}</h3>
+            <h3>{data[questionNumber] && data[questionNumber].question}</h3>
             <div style={answerContainer}>
-                {data[questionNumber].answers.map(answer => {
-                    return (
-                        <span
-                            key={answer.id}
-                            onClick={() => selectAnswer(answer)}
-                            style={
-                                answer.check === 1
-                                    ? answerTextStyle
-                                    : answerText
-                            }
-                        >
-                            <p style={answerParagraph}>{answer.text}</p>
-                        </span>
-                    );
-                })}
+                {data[questionNumber] &&
+                    data[questionNumber].answers.map(answer => {
+                        return (
+                            <span
+                                key={answer.id}
+                                onClick={() => selectAnswer(answer)}
+                                style={
+                                    answer.check === 1
+                                        ? answerTextStyle
+                                        : answerText
+                                }
+                            >
+                                <p style={answerParagraph}>{answer.text}</p>
+                            </span>
+                        );
+                    })}
             </div>
         </div>
     );
