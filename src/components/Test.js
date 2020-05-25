@@ -42,6 +42,7 @@ function Test() {
     const [myStyle, setmyStyle] = useState({ active: null });
     const [data, setData] = useState([]);
     let [questionNumber, setQuestionNumber] = useState(0);
+    const [disableClick, setDisableClick] = useState({ pointerEvents: null });
     useEffect(() => {
         async function getData() {
             const res = await getTest();
@@ -56,16 +57,19 @@ function Test() {
             value = null;
         }
         setmyStyle({ active: value });
+        setDisableClick({ pointerEvents: "none" });
+
         if (!data[questionNumber + 1]) return;
 
         setTimeout(() => {
             setQuestionNumber(questionNumber + 1);
+            setDisableClick({ pointerEvents: null });
             setmyStyle({ active: null });
         }, 1000);
     }
 
     return (
-        <div style={container}>
+        <div style={Object.assign({}, container, disableClick)}>
             <h2>Question {questionNumber + 1}/20</h2>
             <h3>{data[questionNumber] && data[questionNumber].question}</h3>
             <div style={answerContainer}>
