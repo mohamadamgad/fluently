@@ -6,8 +6,8 @@ const container = {
 };
 
 const answerContainer = {
-    display: "inline-grid",
-    gridTemplateAreas: '"span span" "span span"',
+    display: "grid",
+    gridTemplateColumns: "repeat(2, 50%)",
     gridGap: "20px 12px",
     width: "100%"
 };
@@ -42,7 +42,6 @@ function Test() {
     const [myStyle, setmyStyle] = useState({ active: null });
     const [data, setData] = useState([]);
     let [questionNumber, setQuestionNumber] = useState(0);
-    const [answerTextStyle, setanswerTextStyle] = useState(answerText);
     useEffect(() => {
         async function getData() {
             const res = await getTest();
@@ -61,7 +60,6 @@ function Test() {
 
         setTimeout(() => {
             setQuestionNumber(questionNumber + 1);
-            setanswerTextStyle(answerText);
             setmyStyle({ active: null });
         }, 1000);
     }
