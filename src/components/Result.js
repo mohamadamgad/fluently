@@ -1,8 +1,9 @@
 import React from "react";
 
-function Result() {
+function Result(props) {
     return (
         <div>
+            {props.location.state.score}
             <h3>Thanks for fnishing the test</h3>
             <p>your result is</p>
         </div>

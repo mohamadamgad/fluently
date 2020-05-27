@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getTest } from "../api/dataApi";
+import { useHistory } from "react-router-dom";
 
 const container = {
     width: "50%"
@@ -39,6 +40,7 @@ const answerParagraph = {
 };
 
 function Test() {
+    const history = useHistory();
     const [myStyle, setmyStyle] = useState({ active: null });
     const [data, setData] = useState([]);
     let [questionNumber, setQuestionNumber] = useState(0);
@@ -52,14 +54,20 @@ function Test() {
     }, []);
 
     function selectAnswer(value) {
-        console.log("value", value);
         if (value === myStyle.active) {
             value = null;
         }
         setmyStyle({ active: value });
         setDisableClick({ pointerEvents: "none" });
 
-        if (!data[questionNumber + 1]) return;
+        if (!data[questionNumber + 1]) {
+            history.push({
+                pathname: "/result",
+                state: {
+                    score: 123
+                }
+            });
+        }
 
         setTimeout(() => {
             setQuestionNumber(questionNumber + 1);
