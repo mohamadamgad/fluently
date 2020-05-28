@@ -40,6 +40,7 @@ const answerParagraph = {
 };
 
 function Test() {
+    const [score, setScore] = useState(0);
     const history = useHistory();
     const [myStyle, setmyStyle] = useState({ active: null });
     const [data, setData] = useState([]);
@@ -53,18 +54,27 @@ function Test() {
         getData();
     }, []);
 
-    function selectAnswer(value) {
+    function calculateScore(answer) {
+        if (answer.check === 1) {
+            setScore(prevScore => prevScore + 1);
+        }
+    }
+
+    function selectAnswer(value, answer) {
         if (value === myStyle.active) {
             value = null;
         }
+
         setmyStyle({ active: value });
         setDisableClick({ pointerEvents: "none" });
+
+        calculateScore(answer);
 
         if (!data[questionNumber + 1]) {
             history.push({
                 pathname: "/result",
                 state: {
-                    score: 123
+                    _score: score
                 }
             });
         }
@@ -92,7 +102,7 @@ function Test() {
                         return (
                             <span
                                 key={answer.id}
-                                onClick={() => selectAnswer(index)}
+                                onClick={() => selectAnswer(index, answer)}
                                 style={color}
                             >
                                 <p style={answerParagraph}>{answer.text}</p>
