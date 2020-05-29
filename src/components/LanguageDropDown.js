@@ -4,6 +4,14 @@ import FormControl from "@material-ui/core/FormControl";
 import NativeSelect from "@material-ui/core/NativeSelect";
 import InputBase from "@material-ui/core/InputBase";
 
+// import IconButton from "@material-ui/core/iconButton";
+// import { Icon_Flag_AU } from "material-ui-country-flags/lib/Icon_Flag_AU.js";
+
+// import ReactFlagsSelect from "react-flags-select";
+
+//import css module
+import "react-flags-select/css/react-flags-select.css";
+
 const BootstrapInput = withStyles(theme => ({
     root: {
         "label + &": {
@@ -36,28 +44,30 @@ const useStyles = makeStyles(theme => ({
 
 function LanguageDropDown() {
     const classes = useStyles();
-    const [age, setAge] = React.useState("");
+    const [language, setLanguage] = React.useState();
 
     const handleChange = event => {
-        setAge(event.target.value);
+        setLanguage(event.target.value);
     };
     return (
-        <FormControl className={classes.margin}>
-            <NativeSelect
-                id="demo-customized-select-native"
-                value={age}
-                onChange={handleChange}
-                input={<BootstrapInput />}
-                classes={{
-                    icon: classes.whiteColor
-                }}
-            >
-                <option value="">Select Language</option>
-                <option value={0}>English</option>
-                <option value={1}>Español</option>
-                <option value={2}>Deutsch</option>
-            </NativeSelect>
-        </FormControl>
+        <>
+            <FormControl className={classes.margin}>
+                <NativeSelect
+                    id="demo-customized-select-native"
+                    value={language}
+                    onChange={handleChange}
+                    input={<BootstrapInput />}
+                    classes={{
+                        icon: classes.whiteColor
+                    }}
+                >
+                    <option value="">Select Language</option>
+                    <option value={0}>English</option>
+                    <option value={1}>Español</option>
+                    <option value={2}>Deutsch</option>
+                </NativeSelect>
+            </FormControl>
+        </>
     );
 }
 
