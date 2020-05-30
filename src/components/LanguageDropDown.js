@@ -46,10 +46,6 @@ function LanguageDropDown(props) {
     const classes = useStyles();
     const [language, setLanguage] = React.useState();
 
-    const handleChange = event => {
-        console.log("handle change", event.target.value);
-        setLanguage(event.target.value);
-    };
     return (
         <>
             <FormControl className={classes.margin}>

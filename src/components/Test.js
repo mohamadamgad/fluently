@@ -39,7 +39,8 @@ const answerParagraph = {
     padding: "10px"
 };
 
-function Test() {
+function Test(props) {
+    console.log("props", props.location.state.language);
     const [score, setScore] = useState(0);
     const history = useHistory();
     const [myStyle, setmyStyle] = useState({ active: null });
