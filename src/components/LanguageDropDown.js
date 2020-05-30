@@ -42,11 +42,12 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-function LanguageDropDown() {
+function LanguageDropDown(props) {
     const classes = useStyles();
     const [language, setLanguage] = React.useState();
 
     const handleChange = event => {
+        console.log("handle change", event.target.value);
         setLanguage(event.target.value);
     };
     return (
@@ -55,7 +56,7 @@ function LanguageDropDown() {
                 <NativeSelect
                     id="demo-customized-select-native"
                     value={language}
-                    onChange={handleChange}
+                    onChange={props.handleChange}
                     input={<BootstrapInput />}
                     classes={{
                         icon: classes.whiteColor

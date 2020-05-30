@@ -10,12 +10,18 @@ const container = {
     alignItems: "baseline"
 };
 
+function handleSelect(event) {
+    // alert("The Child button text is: " + this.state.childText);
+
+    console.log("The Child HTML is: " + event.target.value);
+}
+
 function HomePage() {
     return (
         <div>
             <h2>Welcome to Fluently</h2>
             <div style={container}>
-                <LanguageDropDown />
+                <LanguageDropDown handleChange={handleSelect} />
 
                 <Link to="test">
                     <Button variant="contained" color="primary">
