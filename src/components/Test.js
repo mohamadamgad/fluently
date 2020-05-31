@@ -50,7 +50,7 @@ function Test(props) {
     useEffect(() => {
         async function getData() {
             const res = await getTest();
-            setData(res);
+            setData(res.content);
         }
         getData();
     }, []);

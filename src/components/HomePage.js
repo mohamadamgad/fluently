@@ -24,9 +24,6 @@ function HomePage() {
         });
     }
     function handleSelect(event) {
-        // alert("The Child button text is: " + this.state.childText);
-
-        console.log("Selected language is: " + event.target.value);
         languageSelected = event.target.value;
         return event.target.value;
     }
@@ -35,8 +32,6 @@ function HomePage() {
             <h2>Welcome to Fluently</h2>
             <div style={container}>
                 <LanguageDropDown handleChange={handleSelect} />
-
-                {/* <Link to="test" state={handleSelect}> */}
                 <Button
                     variant="contained"
                     onClick={handleClick}
@@ -44,7 +39,6 @@ function HomePage() {
                 >
                     Start Test
                 </Button>
-                {/* </Link> */}
             </div>
         </div>
     );
