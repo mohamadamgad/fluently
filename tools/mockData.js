@@ -206,8 +206,224 @@ const testObj = [
             }
         ]
     },
+
     {
         id: 1,
+        content: [
+            {
+                id: 0,
+                question: "La gente de esta ciudad ........ muy simpática.",
+                answers: [
+                    { id: 0, text: "siente", check: 0 },
+                    { id: 1, text: "es", check: 1 },
+                    { id: 2, text: "dice", check: 0 },
+                    { id: 3, text: "vive", check: 0 }
+                ]
+            },
+            {
+                id: 1,
+                question: "Yo soy enfermera, y tú ¿a qué ........?",
+                answers: [
+                    { id: 0, text: "estás", check: 0 },
+                    { id: 1, text: "trabajas", check: 0 },
+                    { id: 2, text: "te dedicas", check: 1 },
+                    { id: 3, text: "haces", check: 0 }
+                ]
+            },
+            {
+                id: 2,
+                question:
+                    "¿Qué haces los fines de semana? – Normalmente yo ..... al cine, ..... al fútbol con mis amigos,…",
+                answers: [
+                    { id: 0, text: "voy / jugo", check: 0 },
+                    { id: 1, text: "ando / juego", check: 0 },
+                    { id: 2, text: " ir / jugar", check: 0 },
+                    { id: 3, text: " voy / juego", check: 1 }
+                ]
+            },
+            {
+                id: 3,
+                question: "Me ........ las gafas que te has comprado.",
+                answers: [
+                    { id: 0, text: "gusto", check: 0 },
+                    { id: 1, text: "gustas", check: 0 },
+                    { id: 2, text: "gustan", check: 1 },
+                    { id: 3, text: "gusta", check: 0 }
+                ]
+            },
+            {
+                id: 4,
+                question: "En Barcelona ........ muchos taxis.",
+                answers: [
+                    { id: 0, text: "están", check: 0 },
+                    { id: 1, text: "tiene", check: 0 },
+                    { id: 2, text: "hay", check: 1 },
+                    { id: 3, text: "son", check: 0 }
+                ]
+            },
+            {
+                id: 5,
+                question: "¿Cuántos años ........ tú? - ........ 25",
+                answers: [
+                    { id: 0, text: "tenes / tengo", check: 0 },
+                    { id: 1, text: "as / soy", check: 0 },
+                    { id: 2, text: "tienes / tengo", check: 1 },
+                    { id: 3, text: "tener / teno", check: 0 }
+                ]
+            },
+            {
+                id: 6,
+                question:
+                    "¿A qué hora ........ normalmente en España? – Sobre las doce y media.",
+                answers: [
+                    { id: 0, text: "te acostarte", check: 0 },
+                    { id: 1, text: "te acuestas", check: 1 },
+                    { id: 2, text: "te acostas", check: 0 },
+                    { id: 3, text: "acuestas", check: 0 }
+                ]
+            },
+            {
+                id: 7,
+                question: "Lina siempre llega temprano pero hoy ....... tarde.",
+                answers: [
+                    { id: 0, text: "está", check: 0 },
+                    { id: 1, text: "ha llegado", check: 1 },
+                    { id: 2, text: "llegaba", check: 0 },
+                    { id: 3, text: "he venido", check: 0 }
+                ]
+            },
+            {
+                id: 8,
+                question: "Cuando ........ por la calle, me encontré con Pedro",
+                answers: [
+                    { id: 0, text: "fui", check: 0 },
+                    { id: 1, text: "he ido", check: 0 },
+                    { id: 2, text: "había ido", check: 0 },
+                    { id: 3, text: "iba", check: 1 }
+                ]
+            },
+            {
+                id: 9,
+                question: "El verano que viene .......... al Caribe",
+                answers: [
+                    { id: 0, text: "fuimos", check: 0 },
+                    { id: 1, text: "estamos", check: 0 },
+                    { id: 2, text: "iremos", check: 1 },
+                    { id: 3, text: "seremos", check: 0 }
+                ]
+            },
+            {
+                id: 10,
+                question:
+                    "El año pasado ........ en Brasil, pero este año ........ a Chile",
+                answers: [
+                    { id: 0, text: "estuvimos / vamos", check: 1 },
+                    { id: 1, text: "estábamos / vamos", check: 0 },
+                    { id: 2, text: "fuimos / vamos", check: 0 },
+                    { id: 3, text: "estuvimos / estamos", check: 0 }
+                ]
+            },
+            {
+                id: 11,
+                question:
+                    "Cuando ........ pequeña, siempre ........ en casa de mis abuelos",
+                answers: [
+                    { id: 0, text: "estaba / comía", check: 0 },
+                    { id: 1, text: " era / comía", check: 1 },
+                    { id: 2, text: "estuve / comaba", check: 0 },
+                    { id: 3, text: "fui / comía", check: 0 }
+                ]
+            },
+            {
+                id: 12,
+                question:
+                    "Antes, en España la gente no ......... tantas libertades",
+                answers: [
+                    { id: 0, text: "tendrían", check: 0 },
+                    { id: 1, text: "tuvo", check: 0 },
+                    { id: 2, text: "tenía", check: 1 },
+                    { id: 3, text: " ha tenido", check: 0 }
+                ]
+            },
+            {
+                id: 13,
+                question:
+                    "Maradona ......... el mejor jugador de fútbol de la historia",
+                answers: [
+                    { id: 0, text: "está", check: 0 },
+                    { id: 1, text: "eres", check: 0 },
+                    { id: 2, text: "estuvo", check: 0 },
+                    { id: 3, text: "es", check: 1 }
+                ]
+            },
+            {
+                id: 14,
+                question: "¿Dónde ....... la fiesta? - En casa de Pedro",
+                answers: [
+                    { id: 0, text: "está", check: 0 },
+                    { id: 1, text: "hay", check: 0 },
+                    { id: 2, text: "es", check: 1 },
+                    { id: 3, text: "pasa", check: 0 }
+                ]
+            },
+            {
+                id: 15,
+                question:
+                    "Estoy muy estresado, ¿qué harías tú en mi lugar?- Yo que tú, ........ deporte.",
+                answers: [
+                    { id: 0, text: "haría", check: 1 },
+                    { id: 1, text: "hice", check: 0 },
+                    { id: 2, text: "hacería", check: 0 },
+                    { id: 3, text: "haz", check: 0 }
+                ]
+            },
+            {
+                id: 16,
+                question:
+                    "Si me ........ una moto, te prometo que ........ mucho",
+                answers: [
+                    { id: 0, text: "compras / estudiaré", check: 1 },
+                    { id: 1, text: "compro / he estudiado", check: 0 },
+                    { id: 2, text: "compraré / estudiaré", check: 0 },
+                    { id: 3, text: "compraré / estudio", check: 0 }
+                ]
+            },
+            {
+                id: 17,
+                question:
+                    "Si quieres ver esa película, ........ al cine esta noche",
+                answers: [
+                    { id: 0, text: "viene", check: 0 },
+                    { id: 1, text: "vas", check: 0 },
+                    { id: 2, text: "ve", check: 1 },
+                    { id: 3, text: "es", check: 0 }
+                ]
+            },
+            {
+                id: 18,
+                question:
+                    "No te ........... sin que el profesor te dé los deberes para mañana",
+                answers: [
+                    { id: 0, text: "vayas", check: 1 },
+                    { id: 1, text: "vas", check: 0 },
+                    { id: 2, text: "ir", check: 0 },
+                    { id: 3, text: "vete", check: 0 }
+                ]
+            },
+            {
+                id: 19,
+                question: "Ojalá ......... Elena esta noche a la fiesta",
+                answers: [
+                    { id: 0, text: "vendrá", check: 0 },
+                    { id: 1, text: "viene", check: 0 },
+                    { id: 2, text: "venga", check: 1 },
+                    { id: 3, text: "vendría", check: 0 }
+                ]
+            }
+        ]
+    },
+    {
+        id: 2,
         content: [
             {
                 id: 0,
