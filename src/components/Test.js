@@ -41,6 +41,7 @@ const answerParagraph = {
 
 function Test(props) {
     console.log("props", props.location.state.language);
+    const selectedLanguage = props.location.state.language;
     const [score, setScore] = useState(0);
     const history = useHistory();
     const [myStyle, setmyStyle] = useState({ active: null });
@@ -49,7 +50,7 @@ function Test(props) {
     const [disableClick, setDisableClick] = useState({ pointerEvents: null });
     useEffect(() => {
         async function getData() {
-            const res = await getTest();
+            const res = await getTest(selectedLanguage);
             setData(res.content);
         }
         getData();
