@@ -40,7 +40,6 @@ const answerParagraph = {
 };
 
 function Test(props) {
-    console.log("props", props.location.state.language);
     const selectedLanguage = props.location.state.language;
     const [score, setScore] = useState(0);
     const history = useHistory();
@@ -54,7 +53,7 @@ function Test(props) {
             setData(res.content);
         }
         getData();
-    }, []);
+    }, [selectedLanguage]);
 
     function calculateScore(answer) {
         if (answer.check === 1) {

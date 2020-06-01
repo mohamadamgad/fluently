@@ -4,14 +4,6 @@ import FormControl from "@material-ui/core/FormControl";
 import NativeSelect from "@material-ui/core/NativeSelect";
 import InputBase from "@material-ui/core/InputBase";
 
-// import IconButton from "@material-ui/core/iconButton";
-// import { Icon_Flag_AU } from "material-ui-country-flags/lib/Icon_Flag_AU.js";
-
-// import ReactFlagsSelect from "react-flags-select";
-
-//import css module
-import "react-flags-select/css/react-flags-select.css";
-
 const BootstrapInput = withStyles(theme => ({
     root: {
         "label + &": {
@@ -44,7 +36,7 @@ const useStyles = makeStyles(theme => ({
 
 function LanguageDropDown(props) {
     const classes = useStyles();
-    const [language, setLanguage] = React.useState();
+    const [language] = React.useState();
 
     return (
         <>
