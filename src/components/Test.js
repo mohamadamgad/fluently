@@ -75,7 +75,8 @@ function Test(props) {
             history.push({
                 pathname: "/result",
                 state: {
-                    _score: score
+                    _score: score,
+                    language: getLanaguageName(selectedLanguage)
                 }
             });
         }
@@ -85,6 +86,14 @@ function Test(props) {
             setDisableClick({ pointerEvents: null });
             setmyStyle({ active: null });
         }, 1000);
+    }
+
+    function getLanaguageName(languageId) {
+        console.log("language", languageId);
+        let language = "";
+        languageId === "0" ? (language = "English") : (language = "Español");
+
+        return language;
     }
 
     return (
