@@ -91,7 +91,12 @@ function Test(props) {
     function getLanaguageName(languageId) {
         console.log("language", languageId);
         let language = "";
-        languageId === "0" ? (language = "English") : (language = "Español");
+
+        languageId === "0"
+            ? (language = "English")
+            : languageId === "1"
+            ? (language = "Español")
+            : (language = "Deutsch");
 
         return language;
     }
