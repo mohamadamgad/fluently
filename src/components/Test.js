@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import { getTest } from "../api/dataApi";
+
 import { useHistory } from "react-router-dom";
 
 import { loadTest } from "../actions/testActions";
@@ -50,15 +50,16 @@ function Test(props) {
     const [data, setData] = useState([]);
     let [questionNumber, setQuestionNumber] = useState(0);
     const [disableClick, setDisableClick] = useState({ pointerEvents: null });
+
     useEffect(() => {
-        // loadTest(selectedLanguage);
-        // async function getData() {
-        // const res = await loadTest(selectedLanguage);
-        console.log("testStore.getTest", testStore.getTest());
-        setData(testStore.getTest());
-        // }
-        // getData();
+        testStore.addChangeListener(onChange);
+        loadTest(selectedLanguage);
+        return () => testStore.removeChangeListener(onChange);
     }, [selectedLanguage]);
+
+    function onChange() {
+        setData(testStore.getTest());
+    }
 
     function calculateScore(answer) {
         if (answer.check === 1) {
