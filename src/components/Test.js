@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { getTest } from "../api/dataApi";
+// import { getTest } from "../api/dataApi";
 import { useHistory } from "react-router-dom";
+
+import { loadTest } from "../actions/testActions";
+import testStore from "../stores/testStore";
 
 const container = {
     width: "50%"
@@ -48,11 +51,13 @@ function Test(props) {
     let [questionNumber, setQuestionNumber] = useState(0);
     const [disableClick, setDisableClick] = useState({ pointerEvents: null });
     useEffect(() => {
-        async function getData() {
-            const res = await getTest(selectedLanguage);
-            setData(res.content);
-        }
-        getData();
+        // loadTest(selectedLanguage);
+        // async function getData() {
+        // const res = await loadTest(selectedLanguage);
+        console.log("testStore.getTest", testStore.getTest());
+        setData(testStore.getTest());
+        // }
+        // getData();
     }, [selectedLanguage]);
 
     function calculateScore(answer) {

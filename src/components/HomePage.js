@@ -4,6 +4,8 @@ import LanguageDropDown from "./LanguageDropDown";
 import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
 
+import { loadTest } from "../actions/testActions";
+
 const container = {
     display: "flex",
     justifyContent: "space-evenly",
@@ -24,6 +26,7 @@ function HomePage() {
     }
     function handleSelect(event) {
         languageSelected = event.target.value;
+        loadTest(languageSelected);
         return event.target.value;
     }
     return (
