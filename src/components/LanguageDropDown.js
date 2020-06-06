@@ -11,10 +11,10 @@ const BootstrapInput = withStyles(theme => ({
         }
     },
     input: {
-        color: "#fff",
+        color: "#282c34s",
         borderRadius: 4,
         position: "relative",
-        border: "1px solid #fff",
+        border: "1px solid #282c34",
         fontSize: 16,
         padding: "8px 26px 8px 12px",
         transition: theme.transitions.create(["border-color", "box-shadow"]),
@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
         margin: theme.spacing(1)
     },
     whiteColor: {
-        fill: "#fff"
+        fill: "#282c34"
     }
 }));
 
