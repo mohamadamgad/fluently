@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import { loadTest } from "../actions/testActions";
 import testStore from "../stores/testStore";
+import Radium from "radium";
 
 const container = {
     width: "50%"
@@ -27,7 +28,10 @@ const correctAnswer = {
     borderRadius: "25px",
     justifyItems: "center",
     alignItems: "center",
-    cursor: "pointer"
+    cursor: "pointer",
+    ":hover": {
+        borderRadius: "2px"
+    }
 };
 
 const wrongAnswer = {

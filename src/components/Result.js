@@ -14,14 +14,13 @@ function Result(props) {
     const score = Math.floor((props.location.state._score / 20) * 100);
     return (
         <div>
-            <h3>Thanks for finishing the test</h3>
-            <p>
-                You are &nbsp;
+            <h4>You are</h4>
+            <h2>
                 <span style={score >= 50 ? goodResult : poorResult}>
                     {score} %
                 </span>{" "}
-                &nbsp; Fluent in {props.location.state.language}
-            </p>
+            </h2>
+            <h2>Fluent in {props.location.state.language}</h2>
         </div>
     );
 }
