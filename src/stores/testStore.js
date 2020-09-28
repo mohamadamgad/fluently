@@ -19,7 +19,6 @@ class TestStore extends EventEmitter {
     }
 
     getTest() {
-        console.log("_test", _test);
         return _test;
     }
 }
